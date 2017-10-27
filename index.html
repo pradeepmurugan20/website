@@ -24,7 +24,7 @@ $(document).ready(function(){
      {
         arr.push(data);
         $('#table').bootstrapTable({ data: arr });
-        $table.bootstrapTable('append', arr);
+        $('#table').bootstrapTable('append', arr);
      }
      $.getJSON("https://jsonplaceholder.typicode.com/posts/1", callback);
      $.getJSON("https://jsonplaceholder.typicode.com/posts/2", callback);
