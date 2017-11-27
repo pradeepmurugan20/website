@@ -18,54 +18,77 @@
                 <h3>Update user</h3>
         </center>
         </div>
-        <hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT:
-  <div class=" row ">
-  <div class="col-sm-1 "> <button type="button " class="btn btn-success " id="create ">Create</button></div>
-  <div class="col-sm-1 "><button type="button " class="btn btn-danger ">Remove</button></div>
-  <div class="col-sm-1 "><button type="button " class="btn btn-info ">Update</button></div>
-  <div class="col-sm-1 "><button type="button " class="btn btn-primary ">Display</button></div> 
-  <div class="col-sm-8 "></div>
-</div>  
-</div>
-<div class="container ">
-  <form action="/action_page.php " id= "query "> 
-    <div class="form-group ">
-    <div class="col-xs-3 ">
-       <label for="Username ">Username:</label>
-       <input type="Username " class="form-control " id="Username " placeholder="Enter username " name="Username ">
-    </div><br><br><br>
+        <hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px">
+        <div class=" row ">
+            <div class="col-sm-1 ">
+                <button type="button " class="btn btn-success " id="create ">Create</button>
+            </div>
+            <div class="col-sm-1 ">
+                <button type="button " class="btn btn-danger ">Remove</button>
+            </div>
+            <div class="col-sm-1 ">
+                <button type="button " class="btn btn-info ">Update</button>
+            </div>
+            <div class="col-sm-1 ">
+                <button type="button " class="btn btn-primary ">Display</button>
+            </div>
+            <div class="col-sm-8 "></div>
+        </div>
     </div>
-    <div class="form-group ">
-    <div class="col-xs-3 ">
-      <label for="pwd ">Password:</label>
-      <input type="password " class="form-control " id="pwd " placeholder="Enter password " name="pwd ">
-    </div><br><br><br>
+    <div class="container ">
+        <form id="query ">
+            <div class="form-group ">
+                <div class="col-xs-3 ">
+                    <label for="Username ">Username:</label>
+                    <input type="Username " class="form-control " id="Username " placeholder="Enter username " name="Username ">
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="form-group ">
+                <div class="col-xs-3 ">
+                    <label for="pwd ">Password:</label>
+                    <input type="password " class="form-control " id="pwd " placeholder="Enter password " name="pwd ">
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="form-group ">
+                <div class="col-xs-3 ">
+                    <label for="Fullname ">Full name:</label>
+                    <input type="Fullname " class="form-control " id="Full name " placeholder="Enter fullname " name="Full name ">
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="checkbox ">
+                <div class="col-xs-3 ">
+                    <label>
+                        <input type="checkbox " class="checkbox style-2 pull-right " name="active ">Is Active</label>
+                    <class="checkbox ">
+                        <label>
+                            <input type="checkbox " class="checkbox style-2 pull-right " name="temp ">Is Temp</label>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-xs-3 ">
+                <button type="submit " class="btn btn-default ">Submit</button>
+            </div>
+        </form>
     </div>
-    <div class="form-group ">
-    <div class="col-xs-3 ">
-      <label for="Fullname ">Full name:</label>
-      <input type="Fullname " class="form-control " id="Full name " placeholder="Enter fullname " name="Full name ">
-    </div><br><br><br>
-    </div>
-    <div class="checkbox ">
-    <div class="col-xs-3 ">
-      <label><input type="checkbox " class="checkbox style-2 pull-right " name="active ">Is Active</label>
-      <class="checkbox ">
-      <label><input type="checkbox " class="checkbox style-2 pull-right " name="temp ">Is Temp</label>
-    </div>
-    </div><br><br>
-        <div class="col-xs-3 ">
-    <button type="submit " class="btn btn-default ">Submit</button>
-    </div>
-  </form>
-</div>
-<script>
-    $(document).ready(funciton(){
-        $("#query ").hide();
- $("#create ").click(function() {
-            $("#query ").show();
-        }
-    }
-</script>
+
+    <script>
+        $(document ).ready(function() {
+            $("#query").hide();
+            $("#create").click(function() {
+              $("#query").show();
+            });
+          });
+    </script>
 </body>
+
 </html>
