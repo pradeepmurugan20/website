@@ -19,7 +19,7 @@
         </center>
         </div>
         <hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px">
-        <div class=" row ">
+        <div class="row ">
             <div class="col-sm-1 ">
                 <button type="button " class="btn btn-success " id="create ">Create</button>
             </div>
@@ -39,39 +39,33 @@
         <form id="query">
 
             <div class="col-xs-3 ">
-                <label for="Username ">Username:</label>
-                <input type="Username " class="form-control " id="Username " placeholder="Enter username " name="Username ">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
             </div>
             <br>
             <br>
             <br>
 
             <div class="col-xs-3 ">
-                <label for="pwd ">Password:</label>
-                <input type="password " class="form-control " id="pwd " placeholder="Enter password " name="pwd ">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
             </div>
             <br>
             <br>
             <br>
-
-
             <div class="col-xs-3 ">
-                <label for="Fullname ">Full name:</label>
-                <input type="Fullname " class="form-control " id="Full name " placeholder="Enter fullname " name="Full name ">
+                <label for="fullname">Full name:</label>
+                <input type="text" class="form-control" id="fullname" placeholder="Enter fullname" name="fullname">
             </div>
             <br>
             <br>
             <br>
-
-            <div class="checkbox ">
-                <div class="col-xs-3 ">
-                    <label>
-                        <input type="checkbox " class="checkbox style-2 pull-right " name="active ">Is Active</label>
-                    <class="checkbox ">
-                        <label>
-                            <input type="checkbox " class="checkbox style-2 pull-right " name="temp ">Is Temp</label>
+                <div class="col-xs-3">
+                    <label for="active">
+                        <input type="checkbox" id="active"  name="active ">Is Active</label>
+                    <label for="temp">
+                        <input type="checkbox" id="temp" name="temp">Is Temp</label>
                 </div>
-            </div>
             <br>
             <br>
             <div class="col-xs-3 ">
@@ -79,7 +73,6 @@
             </div>
         </form>
     </div>
-
     <script>
         $(document).ready(function () {
             $("#query").hide();
