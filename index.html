@@ -1,83 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="UTF-8">
 
 <head>
-    <title>Manage User</title>
+    <title>Manage Users</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
 </head>
 
 <body>
+    <center>
 
-    <div class="container-fluid">
         <center>
-            <div class="col-sm-4">
-                <h3>Manage users</h3>
+            <h3>Manage users</h3>
         </center>
+    </center>
+
+    <hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px">
+    <br>
+    <br>
+    <div class="col-md-8 col-sm-1"></div>
+    <button type="button" id="createbutton" class="btn btn-success" data-toggle="modal" data-target="#createmodal">Create User</button>
+    <br>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Id</th>
+                    <th>UserName</th>
+                    <th>Password</th>
+                    <th>IsActive</th>
+                    <th>IsTemp</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="createmodal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        <center>
+                            <h4 class="modal-title">Edit User</h4>
+                        </center>
+
+                    </div>
+                    <div class="modal-body">
+
+                        <form id="createform" name="createform" method="POST">
+
+                            <div class="col-md-3 col-sm-1"></div>
+                            <div class="col-xs-6 col-md-6 col-sm-3">
+
+
+                                <div class="row">
+
+                                    <label for="username">Username:</label>
+
+                                    <input type="text" class="form-control" id="username" placeholder="Enter username" pattern="[A-Za-z]{1,}" name="username">
+                                </div>
+                                <br>
+
+                                <div class="row">
+                                    <label for="pwd">Password:</label>
+                                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" pattern="[A-Za-z]{1,}" name="password">
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <label for="active">Is Active</label>
+                                    <select id="IsActive" name="IsActive" class="form-control">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                    <br>
+                                    <br>
+                                    <label for="temp">Is Temp</label>
+                                    <select id="IsTemp" name="IsTemp" class="form-control">&nbsp;&nbsp;Is Temp&nbsp;&nbsp;&nbsp;
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>&nbsp;&nbsp;
+                                    </select>
+                                    <br>
+                                    <br>
+                                </div>
+
+                                <div class="row">
+                                    <input type="submit" class="btn btn-default" value="submit">
+
+                                </div>
+                                <br>
+
+                            </div>
+
+                        </form>
+
+
+                    </div>
+
+
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px">
-        <div class="row ">
-            <div class="col-sm-1">
+
+    </div>
+    <script>
+        $("#createform").trigger("reset");
+    </script>
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="editmodal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        <center>
+                            <h4 class="modal-title">Edit User</h4>
+                        </center>
+
+                    </div>
+                    <div class="modal-body">
+
+                        <form id="editform" name="editform" method="POST">
+
+                            <div class="col-md-3 col-sm-1"></div>
+                            <div class="col-xs-6 col-md-6 col-sm-3">
+
+
+                                <div class="row">
+
+                                    <label for="username1">Username:</label>
+
+                                    <input type="text" class="form-control" id="username1" placeholder="Enter username" pattern="[A-Za-z]{1,}" name="username">
+                                </div>
+                                <br>
+
+                                <div class="row">
+                                    <label for="pwd1">Password:</label>
+                                    <input type="password" class="form-control" id="pwd1" placeholder="Enter password" pattern="[A-Za-z]{1,}" name="password">
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <label for="IsActive1">Is Active</label>
+                                    <select id="IsActive1" name="IsActive" class="form-control">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                    <br>
+                                    <br>
+                                    <label for="IsTemp1">Is Temp</label>
+                                    <select id="IsTemp1" name="IsTemp" class="form-control">&nbsp;&nbsp;Is Temp&nbsp;&nbsp;&nbsp;
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>&nbsp;&nbsp;
+                                    </select>
+                                    <br>
+                                    <br>
+                                </div>
+
+                                <div class="row">
+                                    <input type="submit" id="editSubmitButton" class="btn btn-default" value="submit">
+
+                                </div>
+                                <br>
+
+                            </div>
+
+                        </form>
+
+
+                    </div>
+
+
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+
             </div>
-            <div class="col-sm-1">
-                <button type="button " class="btn btn-success " id="create">Create</button>
+        </div>
+
+    </div>
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="confirmmodal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <p>Are you sure to delete the user?</p>
+                        <button id="yes" class="btn btn-default confirmation">Yes</button>
+                        <button id="no" class="btn btn-default confirmation">No</button>
+                    </div>
+
+                </div>
+
             </div>
-            <div class="col-sm-1 ">
-                <button type="button " class="btn btn-danger ">Remove</button>
-            </div>
-            <div class="col-sm-1 ">
-                <button type="button " class="btn btn-info ">Update</button>
-            </div>
-            <div class="col-sm-1 ">
-                <button type="button " class="btn btn-primary ">Display</button>
-            </div>
-            <div class="col-sm-7 "></div>
         </div>
     </div>
-    <br>
-    <div class="container ">
-        <form id="query">
-
-            <div class="col-xs-3 ">
-                <div class="row">
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
-                </div>
-
-
-
-                <div class="row">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
-                </div>
-                <div class="row">
-                    <label for="fullname">Full name:</label>
-                    <input type="text" class="form-control" id="fullname" placeholder="Enter fullname" name="fullname">
-                </div>
-
-                <div class="row">
-                    <label for="active">
-                        <input type="checkbox" id="active" name="active ">&nbsp;&nbsp;Is Active&nbsp;&nbsp;&nbsp;</label>
-                    <label for="temp">
-                        <input type="checkbox" id="temp" name="temp">&nbsp;&nbsp;Is Temp</label>
-                </div>
-
-                <div class="row">
-                    <button type="submit " class="btn btn-default ">Submit</button>
-                </div>
-        </form>
-        </div>
-        <script>
-            $(document).ready(function () {
-                $("#query").hide();
-                $("#create").click(function () {
-                    $("#query").show();
+    <script>
+        $(document).ready(function () {
+            $.getJSON("http://195.154.181.108:22000/api/user/", function (jsonData) {
+                console.log(jsonData.objects);
+                $.each(jsonData.objects, function (key, val) {
+                    var tr = '<tr>';
+                    tr += '<td>' + (key + 1) + '</td>';
+                    tr += '<td>' + val.id + '</td>';
+                    tr += '<td>' + val.username + '</td>';
+                    tr += '<td>' + val.password + '</td>';
+                    tr += '<td>' + val.IsActive + '</td>';
+                    tr += '<td>' + val.IsTemp + '</td>';
+                    //    tr += '<td><button class="btn btn-info"' + (key + 1) + '">Edit</button></td>';
+                    tr += '<td><button type="button"class="btn btn-info editbutton"data-toggle="modal" data-target="#editmodal" data-key="' + (key + 1) + '">Edit</button></td>';
+                    tr += '<td><button type="button"class="btn btn-danger deletebutton" data-key="' + (key + 1) + '">Delete</button></td>';
+                    tr += '</tr>';
+                    $('tbody').append(tr);
                 });
-            });
-        </script>
+                $('.editbutton').on('click', function () {
+                    $("#editform").trigger("reset");
+                    var cRow = $(this).parents('tr');
+                    var cId = $('td:nth-child(2)', cRow).text();
+                    var intKey = $(this).data('key');
+                    console.log(cId + " " + intKey);
+                    $.getJSON("http://195.154.181.108:22000/api/user/" + cId + '/', function (json) {
+                        document.getElementById("username1").value = json.username;
+                        document.getElementById("pwd1").value = json.password;
+                        document.getElementById("IsActive1").value = json.IsActive;
+                        document.getElementById("IsTemp1").value = json.IsTemp;
+                    });
+                    $("#editform").off();
+                    $("#editform").submit(function (e) {
+                        e.preventDefault();
+                        var form = $(this);
+                        var action = form.attr("action");
+                        var data = form.serializeArray();
+                        console.log(cId);
+                        $.ajax({
+                            url: 'http://195.154.181.108:22000/api/user/' + cId + '/',
+                            dataType: 'json',
+                            type: 'PUT',
+                            contentType: 'application/json',
+                            data: JSON.stringify(getFormData(data)),
+                            success: function (data) {
+                                console.log("DATA POSTED SUCCESSFULLY" + data);
+                            },
+                            error: function (jqXhr, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            }
+                        });
+
+                        $("#editform").trigger("reset");
+                    });
+
+                });
+                $('.deletebutton').on('click', function () {
+                    var cRow = $(this).parents('tr');
+                    var cId = $('td:nth-child(2)', cRow).text();
+                    var intKey = $(this).data('key');
+                    cRow.fadeOut('slow', function () {
+                        doDelete(cId, intKey);
+                        console.log(cId + " " + intKey);
+                    });
+                });
+                function doDelete(param1, param2) {
+                    var r = confirm("Press ok to delete the user");
+                    if (r == true) {
+                        $.ajax({
+                            url: 'http://195.154.181.108:22000/api/user/' + param1 + '/',
+                            type: 'DELETE',
+                            success: function (result) {
+                            }
+                        });
+                    }
+                       
+                        //alert('Data with\n\nID: [' + param1 + ']\nKey: [' + param2 + ']\n\nRemoved.');
+                        console.log(param1 + " " + param2);
+                    }
+                    $("#createform").submit(function (e) {
+                        e.preventDefault();
+                        var form = $(this);
+                        var action = form.attr("action");
+                        var data = form.serializeArray();
+                        $.ajax({
+                            url: 'http://195.154.181.108:22000/api/user/',
+                            dataType: 'json',
+                            type: 'POST',
+                            contentType: 'application/json',
+                            data: JSON.stringify(getFormData(data)),
+                            success: function (data) {
+                                console.log("DATA POSTED SUCCESSFULLY" + data);
+                            },
+                            error: function (jqXhr, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            }
+                        });
+                        $("#createform").trigger("reset");
+                    });
+                    function getFormData(data) {
+                        var unindexed_array = data;
+                        var indexed_array = {};
+                        $.map(unindexed_array, function (n, i) {
+                            indexed_array[n['name']] = n['value'];
+                        });
+                        return indexed_array;
+                    }
+                });
+        });
+    </script>
 </body>
 
 </html>
