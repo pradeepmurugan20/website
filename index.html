@@ -222,7 +222,7 @@
     </div>
     <script>
         $(document).ready(function () {
-            $.getJSON("http://195.154.181.108:22000/api/user/", function (jsonData) {
+            $.getJSON("serverAddress", function (jsonData) {
                 console.log(jsonData.objects);
                 $.each(jsonData.objects, function (key, val) {
                     var tr = '<tr>';
@@ -244,7 +244,7 @@
                     var cId = $('td:nth-child(2)', cRow).text();
                     var intKey = $(this).data('key');
                     console.log(cId + " " + intKey);
-                    $.getJSON("http://195.154.181.108:22000/api/user/" + cId + '/', function (json) {
+                    $.getJSON("serverAddress" + cId + '/', function (json) {
                         document.getElementById("username1").value = json.username;
                         document.getElementById("pwd1").value = json.password;
                         document.getElementById("IsActive1").value = json.IsActive;
@@ -258,7 +258,7 @@
                         var data = form.serializeArray();
                         console.log(cId);
                         $.ajax({
-                            url: 'http://195.154.181.108:22000/api/user/' + cId + '/',
+                            url: 'serverAddress' + cId + '/',
                             dataType: 'json',
                             type: 'PUT',
                             contentType: 'application/json',
@@ -288,7 +288,7 @@
                     var r = confirm("Press ok to delete the user");
                     if (r == true) {
                         $.ajax({
-                            url: 'http://195.154.181.108:22000/api/user/' + param1 + '/',
+                            url: 'serverAddress' + param1 + '/',
                             type: 'DELETE',
                             success: function (result) {
                             }
@@ -304,7 +304,7 @@
                         var action = form.attr("action");
                         var data = form.serializeArray();
                         $.ajax({
-                            url: 'http://195.154.181.108:22000/api/user/',
+                            url: 'serverAddress',
                             dataType: 'json',
                             type: 'POST',
                             contentType: 'application/json',
